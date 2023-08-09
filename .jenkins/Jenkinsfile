@@ -10,7 +10,7 @@ pipeline {
         githubPush()
     }
     options {
-        timeStamps()
+        timestamps()
     }
     stages {
         stage('pip install') {
