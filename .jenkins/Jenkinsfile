@@ -9,7 +9,7 @@ pipeline {
         }
     }
     environment {
-        GITHUB_CREDENTIAL = crendentials('github-token')
+        GITHUB_CREDENTIAL = credentials('github-token')
     }
     triggers {
         githubPush()
