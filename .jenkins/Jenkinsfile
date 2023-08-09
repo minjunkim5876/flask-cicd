@@ -64,6 +64,10 @@ pipeline {
                       }'
                 """, returnStdout: true)
                     sh "echo '$response'"
+
+                    def json = readJSON text: "$response"
+                    def id = json.id
+                    sh "echo '$id'"
                 }
             }
         }
