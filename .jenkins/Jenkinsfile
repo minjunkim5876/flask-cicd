@@ -1,0 +1,38 @@
+pipeline {
+    agent {
+        docker {
+            image 'python:3.10'
+            args '-u root'
+            reuseNode true
+        }
+    }
+    triggers {
+        githubPush()
+    }
+    options {
+        timeStamps()
+    }
+    stages {
+        stage('pip install') {
+            steps {
+                echo 'requirements.txt reading...'
+                sh 'pip install -r requirements.txt'
+                echo 'pip install done.'
+                echo 'flask install success!!'
+            }
+        }
+        stage('flask run') {
+            steps {
+                echo 'flask ready'
+                sh 'python src/main.py'
+                echo 'flask running'
+            }
+        }
+        stage('endpoint test') {
+            steps {
+                echo 'http://localhost:5000/ connect...'
+                sh 'curl -s localhost:5000'
+            }
+        }
+    }
+}
