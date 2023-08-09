@@ -57,8 +57,7 @@ pipeline {
                       "tag_name":"v1.2.0",
                       "target_commitish":"main",
                       "name":"v1.2.0",
-                      //버전설명 적는 곳
-                      "body":"버그수정",
+                      "body":"good",
                       "draft":false,
                       "prerelease":false,
                       "generate_release_notes":false
