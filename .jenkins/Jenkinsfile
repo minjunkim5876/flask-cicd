@@ -57,6 +57,7 @@ pipeline {
                       "tag_name":"v1.1.0",
                       "target_commitish":"main",
                       "name":"v1.1.0",
+                      //버전설명 적는 곳
                       "body":"Description of the release",
                       "draft":false,
                       "prerelease":false,
