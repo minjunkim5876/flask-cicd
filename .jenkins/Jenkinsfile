@@ -30,7 +30,7 @@ pipeline {
         }
             steps {
                 echo 'flask ready'
-                sh 'python src/main.py'
+                sh 'python src/main.py &'
                 echo 'flask running'
             }
         }
